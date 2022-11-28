@@ -2,7 +2,7 @@ import lldb
 from builtins import chr
 
 
-def QString_SummaryProvider(valobj,):
+def QString_SummaryProvider(valobj, internal_dict):
     d = valobj.GetChildMemberWithName('raw_data')
     offset = int(d.GetChildMemberWithName('offset').GetValueAsUnsigned() / 2)
     size = valobj.GetChildMemberWithName('size').GetValueAsUnsigned()
